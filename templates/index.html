@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href={{ url_for("static", filename="css/main.css") }}>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>
+        <script type="text/javascript" src={{ url_for("static", filename="js/main.js") }}></script>
+    </head>
+    <body>
+        <div> <b> Rogue Flask </b></div>
+
+        <div> Nombre de vies : </div> 
+        <div> Sac à dos :<br>
+            - Argent : <br>
+            - Equipement : <br>
+        </div>
+
+        <div class="flexbox">
+            <div class="thekeypad">
+                <div class="key"></div>
+                <div class="key"><input id="go_n" class="keypad_btn" type="button" value="&#9650"> </div>
+                <div class="key"></div>
+                <div class="key"><input id="go_w" class="keypad_btn" type="button" value="&#9664"></div>
+                <div class="key"></div>
+                <div class="key"><input id="go_e" class="keypad_btn" type="button" value="&#9654"></div>
+                <div class="key"></div>
+                <div class="key"><input id="go_s" class="keypad_btn" type="button" value="&#9660"></div>
+                <div class="key"></div>
+            </div>
+
+            <div id="console" style="font-family: monospace;" >
+                {% for i in range(n_row) %}
+                <div style="height:15px">
+                    {% for j in range(n_col) %}<span id="{{ 'cell {}-{}'.format(i,j) }}">{%if "."== mapdata[i][j] %}<img width="15" height="15" src="/static/ressources/grass.jpg">{%elif "@"== mapdata[i][j] %}<img width="15" height="15" src="/static/ressources/character.jpg">{%elif "x"== mapdata[i][j] %}<img width="15" height="15" src="/static/ressources/dirt.jpg">{%else%}<img width="15" height="15" src="/static/ressources/rock.jpg">{% endif %}</span>{% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </body>
+</html>
