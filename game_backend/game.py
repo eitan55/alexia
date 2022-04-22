@@ -8,7 +8,8 @@ class Game:
         self._generator.gen_level()
         self._generator.gen_tiles_level()
         self._map = self._generator.tiles_level
-
+        self._map[2][3]='C'
+        print(self._map)
         self._player = Player()
         self._player.initPos( self._map )
 

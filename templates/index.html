@@ -29,7 +29,7 @@
             <div id="console" style="font-family: monospace;" >
                 {% for i in range(n_row) %}
                 <div style="height:15px">
-                    {% for j in range(n_col) %}<span id="{{ 'cell {}-{}'.format(i,j) }}">{%if "."== mapdata[i][j] %}<img width="15" height="15" src="/static/ressources/grass.jpg">{%elif "@"== mapdata[i][j] %}<img width="15" height="15" src="/static/ressources/character.jpg">{%elif "x"== mapdata[i][j] %}<img width="15" height="15" src="/static/ressources/dirt.jpg">{%else%}<img width="15" height="15" src="/static/ressources/rock.jpg">{% endif %}</span>{% endfor %}
+                    {% for j in range(n_col) %}<span id="{{ 'cell {}-{}'.format(i,j) }}">{%if "."== mapdata[i][j] %}<img width="15" height="15" src="/static/ressources/grass.jpg">{%elif "@"== mapdata[i][j] %}<img width="15" height="15" src="/static/ressources/character.jpg">{%elif "x"== mapdata[i][j] %}<img width="15" height="15" src="/static/ressources/dirt.jpg">{%elif "C"== mapdata[i][j] %}<img width="15" height="15" src="/static/ressources/coin.jpg">{%else%}<img width="15" height="15" src="/static/ressources/rock.jpg">{% endif %}</span>{% endfor %}
                 </div>
                 {% endfor %}
             </div>
